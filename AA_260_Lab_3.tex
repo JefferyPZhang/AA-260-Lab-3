@@ -1,0 +1,131 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+\title{\textbf{AA 260 Lab 3}}
+\author{Debora Mugisha, Jeffery Zhang, Hugh Carbrey, Matthew Idso}
+\date{July 5th, 2023}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem}
+
+Predict the temperature of oxygen at a pressure of 12 MPa and a specific volume of 0.0325 m\(^3\)/kg
+by the following methods:\\*[10pt]
+1. Ideal gas law\\*[7pt]
+2. Van der Waals\\*[7pt]
+3. Beattie-Bridgeman\\*[7pt]
+4. Compressibility chart\\*[7pt]
+5. Which temperature do you think is the most/least accurate?
+\\*[20pt]
+\section{Assumptions}
+
+\begin{itemize}
+ \item There is a constant pressure across the entire system.
+ \item There are no errors involved in the measured data.
+\end{itemize}
+
+\section{Procedure and Results}
+
+\subsection{Ideal Gas Law}
+Relevant equation:
+\begin{center}
+\(\displaystyle Pv=RT\rightarrow T=\frac{Pv}{R}\)
+\end{center}
+According to Table A-1, 
+\begin{center}
+\(\displaystyle R = 0.2598 \ \frac{kJ}{kg\cdot K}=259.8 \ \frac{J}{kg\cdot K}\)
+\end{center}
+Unit Analysis for \(\frac{Pv}{R}\):
+\begin{center}
+\(\displaystyle \frac{\frac{Pa\cdot m^3}{kg}}{\frac{J}{kg\cdot K}}= \frac{\frac{kg\cdot m^3}{kg\cdot m \cdot s^2}}{\frac{kg\cdot m^2}{kg\cdot K \cdot s^2}}= \frac{kg^2\cdot m^3\cdot s^2\cdot K}{kg^2\cdot m^3\cdot s^2}= K\)
+\end{center}
+Therefore, no involved conversions are needed (we can also assume this for sections 3.2 and 3.3). We can can directly plug in values:
+\begin{center}
+\(\displaystyle \frac{1.2\cdot 10^7\cdot0.0325}{259.8}= 1500\) K
+\end{center}
+\clearpage \noindent
+
+\subsection{Van der Waals}
+Relevant equations:
+\begin{center}
+\(\displaystyle (P + \frac{a}{v^2})(v-b) = RT\rightarrow T=\frac{(P + \frac{a}{v^2})(v-b)}{R}\)\\*[10pt]
+\(\displaystyle a=\frac{27\cdot R^2\cdot T_{cr}^2}{64P_{cr}}\)\\*[10pt]
+\(\displaystyle b=\frac{RT_{cr}}{8P_{cr}}\)
+\end{center}
+According to Table A-1:
+\begin{center}
+\(T_{cr}=154.8 \) K\\*[7pt]
+\(P_{cr}=5.08\cdot 10^6\) Pa
+\end{center}
+Plugging in values,
+\begin{center}
+\(\displaystyle a = \frac{27(0.2598)^2(154.8)^2}{8(5.08\cdot 10^6)}=1.07\cdot 10^{-3}\)\\*[10pt]
+\(\displaystyle b = \frac{(0.2598)(154.8)}{8(5.08\cdot 10^6)}=9.90\cdot 10^{-7}\)\\*[10pt]
+\(\displaystyle T=\frac{(1.2\cdot10^7 + \frac{1.07*10^{-3}}{0.0325^2})(0.0325-9.90\cdot 10^{-7})}{259.8}=1500\) K
+\end{center}
+\clearpage \noindent
+
+\subsection{Beattie-Bridgeman}
+Relevant equations:
+\begin{center}
+\(\displaystyle P=\frac{R_uT}{\bar{v}}(1-\frac{c}{\bar{v}T^3})(\bar{v}+B)-\frac{A}{\bar{v}^2}\)\\*[10pt]
+\(\displaystyle A=A_o(1-\frac{a}{\bar{v}})\)\\*[10pt]
+\(\displaystyle B=B_o(1-\frac{b}{\bar{v}})\)\\*[10pt]
+\(\displaystyle \bar{v}=vM\)\\*[10pt]
+\end{center}
+According to Table 3-4:
+\begin{center}
+\(\displaystyle R_u=8.314\)\\*[10pt]
+\(\displaystyle A_o=151.1\)\\*[10pt]
+\(\displaystyle B_o=0.04626\)\\*[10pt]
+\(\displaystyle a=0.02562\)\\*[10pt]
+\(\displaystyle b=0.004208\)\\*[10pt]
+\(\displaystyle c=4.80*10^{-4}\)\\*[10pt]
+\(\displaystyle M_{O_2}=31.9988\)\\*[10pt]
+\end{center}
+Plugging in values,
+\begin{center}
+\(\displaystyle \bar{v}=0.0325\cdot 31.9988 =1.01\cdot10^{-3}\)\\*[10pt]
+\(\displaystyle A=151.1(1-\frac{0.02562}{{1.01\cdot10^{-3}}})=-3682\)\\*[10pt]
+\(\displaystyle B=0.04626(1-\frac{0.004208}{1.01\cdot10^{-3}})=-0.1465\)\\*[10pt]
+\end{center}
+Plugging in all values in the initial equation and finding the x-intercept of the produced graph to solve for T (and converting MPa to kPa), we get:
+\begin{center}
+\(T=1460\) K
+\end{center}
+
+\clearpage \noindent
+\subsection{Compressibility Chart}
+Relevant equations:
+\begin{center}
+\(\displaystyle P_r=\frac{P}{P_{cr}}\)\\*[10pt]
+\(\displaystyle v_r=\frac{v\cdot P_{cr}}{R\cdot T_{cr}}\)\\*[10pt]
+\(\displaystyle Z=\frac{P\cdot V}{R\cdot T}\rightarrow T=\frac{P\cdot V}{R\cdot Z}\)\\*[10pt]
+\end{center}
+Using the values for \(P_{cr}\) and \(T_{cr}\) found earlier in the lab, our calculations are as follows:
+\begin{center}
+\(\displaystyle P_r=\frac{1.2\cdot10^7}{5.08\cdot10^6}=2.36\)\\*[10pt]
+\(\displaystyle v_r=\frac{0.0325\cdot 5.08\cdot10^6}{259.8\cdot 154.8}=4.11\)\\*[10pt]
+\end{center}
+Using this data, we used Figure A-15(b) to find the corresponding Z-value. We used figure (b) because the reduced pressure was between 1 and 7. With these reduced volumes and pressures, we found a z-value of approximately 1.05 through interpolation. \\*[10pt]
+Plugging in values,
+\begin{center}
+\(\displaystyle T=\frac{1.2\cdot10^7\cdot 0.0325}{259.8\cdot 1.05}=1430\) K\\*[30pt]
+\end{center}
+\subsection{Methodology Accuracy}
+The most accurate is likely the Beatty-Bridgeman temperature. We can rule out the
+Ideal gas law due to the high pressure. Out of the two computational methods,
+(Van der Waal’s and Beatty-Bridgeman’s), Beatty-Bridgeman’s method is slightly more
+accurate due to its large number of experimental constants. The general compressibility is generally a valid method, but lots of interpolation was needed for our data, which in turn creates uncertainty. \\
+
+\noindent The least accurate method is the Ideal Gas Law, due to the aforementioned high pressure. Assumptions of the the ideal gas law ignore intermolecular forces (IMFs). At high pressures, the molecules are close together, leading to non-insignificant IMFs.  
+
+\end{document}
